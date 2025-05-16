@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.3</version>
+    </parent>
+
+    <groupId>com.hzy</groupId>
+    <artifactId>shu-cuisine</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common</module>
+        <module>pojo</module>
+        <module>server</module>
+    </modules>
+
+    <properties>
+        <!-- 基础环境 -->
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <web.version>3.4.3</web.version>
+
+        <!-- 阿里生态 -->
+        <aliyun.oss.version>3.18.2</aliyun.oss.version>
+        <aliyun.fastjson.version>2.0.47</aliyun.fastjson.version>
+
+        <!-- 微信支付 -->
+        <wechatpay.client.version>0.4.8</wechatpay.client.version>
+
+        <!-- 数据库相关 -->
+        <mybatis.spring.boot.version>3.0.3</mybatis.spring.boot.version>
+        <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
+
+        <!-- 工具类库 -->
+        <apache.httpclient.version>4.5.13</apache.httpclient.version>
+        <apache.poi.version>5.2.5</apache.poi.version>
+        <apache.poi.ooxml.version>5.4.0</apache.poi.ooxml.version>
+        <commons.lang3.version>3.12.0</commons.lang3.version>
+        <lombok.version>1.18.20</lombok.version>
+
+        <!-- 安全认证 -->
+        <jjwt.version>0.9.1</jjwt.version>
+
+        <!-- JavaEE 兼容 -->
+        <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <jaxb.api.version>2.3.0</jaxb.api.version>
+        <activation.version>1.1.1</activation.version>
+
+        <!-- Spring 生态 -->
+        <spring.websocket.version>3.4.3</spring.websocket.version> <!-- 调整为与Spring Boot 3.x兼容的版本 -->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 公共基础依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${web.version}</version>
+            </dependency>
+
+
+            <!-- 阿里云相关 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${aliyun.fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.oss.version}</version>
+            </dependency>
+
+            <!-- 微信支付 -->
+            <dependency>
+                <groupId>com.github.wechatpay-apiv3</groupId>
+                <artifactId>wechatpay-apache-httpclient</artifactId>
+                <version>${wechatpay.client.version}</version>
+            </dependency>
+
+            <!-- 数据库相关 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache.httpclient.version}</version>
+            </dependency>
+            <!-- Maven项目：在pom.xml中添加 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${apache.poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${apache.poi.ooxml.version}</version>
+            </dependency>
+
+            <!-- 其他重要依赖 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${javax.annotation-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-websocket</artifactId>
+                <version>${spring.websocket.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+</project>

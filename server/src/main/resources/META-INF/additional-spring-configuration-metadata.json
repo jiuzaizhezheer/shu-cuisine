@@ -1,0 +1,43 @@
+{
+  "properties": [
+    {
+      "name": "hzy.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for hanye.datasource.driver-class-name."
+    },
+    {
+      "name": "hzy.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for hanye.datasource.url."
+    },
+    {
+      "name": "hzy.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for hanye.datasource.username."
+    },
+    {
+      "name": "hzy.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for hanye.datasource.password."
+    },
+    {
+      "name": "hzy.redis.host",
+      "type": "java.lang.String",
+      "description": "Description for hanye.redis.host."
+    },
+    {
+      "name": "hzy.redis.port",
+      "type": "java.lang.String",
+      "description": "Description for hanye.redis.port."
+    },
+    {
+      "name": "hzy.redis.password",
+      "type": "java.lang.String",
+      "description": "Description for hanye.redis.password."
+    },
+    {
+      "name": "hzy.redis.database",
+      "type": "java.lang.String",
+      "description": "Description for hanye.redis.database."
+    }
+  ] }

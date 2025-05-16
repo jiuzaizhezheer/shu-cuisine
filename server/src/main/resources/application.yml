@@ -1,0 +1,53 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: ${hzy.datasource.driver-class-name}
+    url: ${hzy.datasource.url}
+    username: ${hzy.datasource.username}
+    password: ${hzy.datasource.password}
+  data:
+    redis:
+      host: ${hzy.redis.host}
+      port: ${hzy.redis.port}
+      password: ${hzy.redis.password}
+      database: ${hzy.redis.database}
+
+# ??mybatis
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  # xml映射文件中返回填充对象包路径
+  type-aliases-package: com.hzy.entity
+  configuration:
+    # ??mybatis输出日志到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # ??mybatis驼峰映射 a_column = aColumn
+    map-underscore-to-camel-case: true
+
+login-reg:
+  jwt:
+    employee-secret-key: admin_handsome
+    employee-ttl: 2592000000
+    employee-token-name: admin_token
+    user-secret-key: user_handsome
+    user-ttl: 2592000000
+    user-token-name: user_token
+
+hzy:
+  wechat:
+    appid: ${hzy.wechat.appid}
+    secret: ${hzy.wechat.secret}
+
+  alioss:
+    endpoint: ${hzy.alioss.endpoint}
+    access-key-id: ${hzy.alioss.access-key-id}
+    access-key-secret: ${hzy.alioss.access-key-secret}
+    bucket-name: ${hzy.alioss.bucket-name}
+
+  shop:
+    address: 广东省广州市番禺区亚运城广场
+  baidu:
+    ak: ePMydufnJzBBTQlrzKwxAmlpRApLxmOW
