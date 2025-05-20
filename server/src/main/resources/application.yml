@@ -32,6 +32,7 @@ login-reg:
     employee-secret-key: admin_handsome
     employee-ttl: 2592000000
     employee-token-name: admin_token
+
     user-secret-key: user_handsome
     user-ttl: 2592000000
     user-token-name: user_token

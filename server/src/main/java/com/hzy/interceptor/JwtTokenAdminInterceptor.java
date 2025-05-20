@@ -61,4 +61,11 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
         }
     }
 
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        // TODO 及时释放资源
+        log.info("本次请求响应结束了");
+        BaseContext.removeCurrentId();
+        HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
+    }
 }
